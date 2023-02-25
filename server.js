@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.log("sfsf",err.stack);
   res.status(500).send("Internal Server Error");
 });
 

@@ -96,14 +96,13 @@ exports.login = async (req, res) => {
     // Check if user with given email exists in the database
     const user = await User.findOne({
       $or: [{ email }, { username: email }],
-    }).select("-password");
+    });
 
     if (!user) {
       return res.status(400).json({ error: "Invalid credentials" });
     }
 
     // Compare passwords
-    console.log(user.password);
     const passwordsMatch = verifyPassword(password, user.password);
 
     if (!passwordsMatch)

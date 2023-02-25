@@ -1,4 +1,4 @@
-const { mongo } = require("mongoose");
+const mongoose = require("mongoose");
 const Post = require("../models/PostModel");
 
 // Create a new post
@@ -128,69 +128,5 @@ exports.getPostByCategory = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, error: "Server Error" });
-  }
-};
-
-// Get post by Tag
-exports.getPostsByTag = async (req, res) => {
-  try {
-    const { tag } = req.query;
-
-    const posts = await Post.find({
-      tags: { $in: [tag] },
-      status: "published",
-    })
-      .populate("category", "name")
-      .populate("author", "name")
-      .sort({ createdAt: -1 });
-
-    res.status(200).json(posts);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ success: false, error: "Server Error" });
-  }
-};
-
-// Filter post
-exports.filterPosts = async (req, res) => {
-  try {
-    const { category, search } = req.query;
-    const filter = {};
-
-    if (category) filter.category = mongoose.Schema.Types.ObjectId(category);
-
-    if (!search) {
-      const posts = await Post.find(filter)
-        .populate("category")
-        .populate("author");
-      return res.json(posts);
-    }
-
-    const posts = await Post.find({ $text: { $search: search } })
-      .populate("category")
-      .populate("author");
-    return res.json(posts);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, error: "Server Error" });
-  }
-};
-
-// Get popular post
-exports.getPopularPosts = async (req, res) => {
-  try {
-    let postSize = req.query.size || 6;
-
-    const popularPosts = await Post.find({ status: "published" })
-      .sort({ likes: -1, views: -1 })
-      .limit(postSize)
-      .populate("author", "name")
-      .populate("category", "name")
-      .select("title slug content imageUrl likes views createdAt");
-
-    res.status(200).json(popularPosts);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Server error" });
   }
 };

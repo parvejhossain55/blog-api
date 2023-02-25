@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { default: slugify } = require("slugify");
+const slugify = require("slugify");
 
 const postSchema = new mongoose.Schema(
   {
@@ -96,3 +96,23 @@ postSchema.pre("save", async function (next) {
 });
 
 module.exports = mongoose.model("Post", postSchema);
+
+// {
+//   "title": "It can help you maintain a healthy weight",
+//   "content": "Regular exercise has numerous benefits for your physical and mental health. It can help you maintain a healthy weight, reduce your risk of chronic diseases like heart disease and diabetes, improve your mood and cognitive function, and much more. In this post, we'll explore some of the key benefits of regular exercise and why you should make it a part of your daily routine.",
+//   "author": "63f9f2af8b05ce58a3175268",
+//   "imageUrl": "https://example.com/exercise.jpg",
+//   "isFeatured": true,
+//   "tags": ["exercise", "fitness", "health"],
+//   "category": ["63f9aa63dc7dd3c06db30075", "63f9d98468c9038b64d43482"],
+//   "status": "published",
+//   // "likes": ["63f9f2af8b05ce58a3175268"],
+//   "views": 1000,
+//   // "related_posts": ["63f9b2468d91d054284494d2"],
+//   "comments": [
+//     {
+//       "text": "Great post! I've been trying to get back into exercising regularly and this was really motivating.",
+//       "author": "63f9f2af8b05ce58a3175268"
+//     },
+//   ]
+// }
