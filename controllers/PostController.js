@@ -130,3 +130,68 @@ exports.getPostByCategory = async (req, res) => {
     res.status(500).json({ success: false, error: "Server Error" });
   }
 };
+
+// Get posts by tag
+exports.getPostsByTag = async (req, res) => {
+  try {
+    const { tag } = req.query;
+
+    const posts = await Post.find({
+      tags: { $in: [tag] },
+      status: "published",
+    })
+      .populate("category", "name")
+      .populate("author", "name")
+      .sort({ createdAt: -1 });
+
+    res.status(200).json(posts);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, error: "Server Error" });
+  }
+};
+
+// Get popular posts
+exports.getPopularPosts = async (req, res) => {
+  try {
+    const popularPosts = await Post.find({ status: "published" })
+      .populate("category", "name")
+      .populate("author", "name")
+      .sort({ views: -1 })
+      .limit(10);
+
+    res.status(200).json(popularPosts);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, error: "Server Error" });
+  }
+};
+
+exports.searchPosts = async (req, res) => {
+  const { query, tags } = req.query;
+
+  try {
+    // Build the search query
+    const searchQuery = {
+      $and: [
+        {
+          $or: [
+            { title: { $regex: query, $options: "i" } },
+            { content: { $regex: query, $options: "i" } },
+          ],
+        },
+        { tags: { $in: [tags] } },
+        // { tags: { $in: tags.split(",") } },
+      ],
+    };
+
+    // Find the posts matching the search query
+    const posts = await Post.find(searchQuery)
+      .populate("author", "username")
+      .populate("category", "name");
+    res.status(200).json(posts);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};

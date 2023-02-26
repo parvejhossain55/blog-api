@@ -1,0 +1,410 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Simple-Blog",
+    "dateExported": "2023-02-26T16:35:29.058Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "31257123-208d-4c12-a316-292063afcb33",
+            "name": "User",
+            "containerId": "",
+            "created": "2023-02-24T11:09:56.602Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "2bfcb469-f7bb-4085-8ebc-ade34622758f",
+            "name": "Category",
+            "containerId": "",
+            "created": "2023-02-25T06:18:50.126Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "Post",
+            "containerId": "",
+            "created": "2023-02-24T11:10:03.950Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "dca7380d-53d6-4ba4-8a66-7945b544b9f3",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "31257123-208d-4c12-a316-292063afcb33",
+            "name": "register",
+            "url": "{{base_url}}/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-02-24T11:10:12.122Z",
+            "modified": "2023-02-25T11:36:26.970Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Parvej Hossain\",\n  \"username\": \"parvej55\",\n  \"email\": \"muhammadparvej98@gmail.com\",\n  \"password\": \"Parvej@55\",\n  \"avatar\": \"https://i.pravatar.cc/300\",\n  \"bio\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\",\n  \"website\": \"https://example.com\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5031356d-6f06-47dc-81b4-486cad3a95ee",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "31257123-208d-4c12-a316-292063afcb33",
+            "name": "verify-email",
+            "url": "{{base_url}}/verify-email",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-02-24T20:54:28.898Z",
+            "modified": "2023-02-25T11:38:28.434Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a748b49e-c9c5-42e0-b745-22abb0904a89",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "31257123-208d-4c12-a316-292063afcb33",
+            "name": "login",
+            "url": "{{base_url}}/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-02-24T11:10:21.657Z",
+            "modified": "2023-02-25T17:59:53.060Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"muhammadparvej98@gmail.com\",\n  \"password\" : \"Parvej@55\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "31cae759-e63d-4509-8cd8-654787d9158d",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "31257123-208d-4c12-a316-292063afcb33",
+            "name": "forgot-password",
+            "url": "{{base_url}}/forgot-password",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-02-24T21:00:56.254Z",
+            "modified": "2023-02-24T21:02:24.208Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"parvejhossain4040@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c10bd71a-a3b1-4c3b-a90c-698304600cbf",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "31257123-208d-4c12-a316-292063afcb33",
+            "name": "verify-reset-token",
+            "url": "{{base_url}}/verify-reset-token/2162d940fefed865c75c8a19d9092644df3ab1af",
+            "method": "POST",
+            "sortNum": 35000,
+            "created": "2023-02-24T21:14:50.956Z",
+            "modified": "2023-02-24T21:16:03.726Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"parvejhossain4040@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "198d3e67-4569-47d1-9e12-c67d9881c525",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "31257123-208d-4c12-a316-292063afcb33",
+            "name": "change-password",
+            "url": "{{base_url}}/change-password/2162d940fefed865c75c8a19d9092644df3ab1af",
+            "method": "POST",
+            "sortNum": 45000,
+            "created": "2023-02-24T21:17:39.474Z",
+            "modified": "2023-02-24T21:20:53.487Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"Parvej@100\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "16e093a3-974e-4aca-bb42-2195de84ed58",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "createPost",
+            "url": "{{base_url}}/posts",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-02-24T11:20:09.642Z",
+            "modified": "2023-02-25T19:11:14.788Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"In this post, we'll explore some of \",\n  \"content\": \"Regular exercise has numerous benefits for your physical and mental health. It can help you maintain a healthy weight, reduce your risk of chronic diseases like heart disease and diabetes, improve your mood and cognitive function, and much more. In this post, we'll explore some of the key benefits of regular exercise and why you should make it a part of your daily routine.\",\n  \"author\": \"63f9f2af8b05ce58a3175268\",\n  \"imageUrl\": \"https://example.com/exercise.jpg\",\n  \"isFeatured\": true,\n  \"tags\": [\"exercise\", \"fitness\", \"health\"],\n  \"category\": [\"63f9aa63dc7dd3c06db30075\", \"63f9d98468c9038b64d43482\"], \n  \"status\": \"published\",\n  \"views\": 1000,\n  \"comments\": [\n    {\n      \"text\": \"Great post! I've been trying to get back into exercising regularly and this was really motivating.\",\n      \"author\": \"63f9f2af8b05ce58a3175268\"\n    }\n  ]\n}\n\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ed7bebd4-b569-4d3a-ac14-624af5087c13",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "getAllPosts",
+            "url": "{{base_url}}/posts",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-02-25T09:36:43.003Z",
+            "modified": "2023-02-25T11:00:09.020Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "75bca277-1a15-40d9-b552-cbfb22a4f2c1",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "getPostsById",
+            "url": "{{base_url}}/posts/63fa53d8abbdd102024da8e1",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-02-25T09:51:45.926Z",
+            "modified": "2023-02-25T18:51:05.030Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "77f42f1d-4190-4a57-8fa3-1fa622d279c7",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "updatePostById",
+            "url": "{{base_url}}/posts/63fa53d8abbdd102024da8e1",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2023-02-25T09:52:46.663Z",
+            "modified": "2023-02-25T18:52:45.873Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Great post! I've been trying to get back into \"\n}\n\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a9f484d8-de88-4dbe-9ed4-3990a253535f",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "addCommentToPostById",
+            "url": "{{base_url}}/posts/63fa587d336e6eeaa812215d/comments",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-02-25T10:01:25.343Z",
+            "modified": "2023-02-25T18:53:26.929Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"text\": \"I agree, exercise is so important for overall health and well-being!\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cfd757a4-1180-4c26-a258-268dbcc0afe7",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "2bfcb469-f7bb-4085-8ebc-ade34622758f",
+            "name": "createCategory",
+            "url": "{{base_url}}/category",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-02-25T06:18:59.511Z",
+            "modified": "2023-02-25T09:48:53.921Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Mobile\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b02f36c0-9761-4ad3-aafe-2ddc00525641",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "getRelatedPosts",
+            "url": "{{base_url}}/posts/63fa587d336e6eeaa812215d/related",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-02-25T10:25:33.217Z",
+            "modified": "2023-02-25T18:57:05.060Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d2f7c3d2-d592-4145-81c4-bf05ebe3d155",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "2bfcb469-f7bb-4085-8ebc-ade34622758f",
+            "name": "getAllCategories",
+            "url": "{{base_url}}/category",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-02-25T06:29:14.631Z",
+            "modified": "2023-02-25T06:29:29.252Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Toy\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b61f41fd-9ebd-46fd-a33b-1b37a3cb4ffa",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "getPostByCategory",
+            "url": "{{base_url}}/posts/category/63f9aa63dc7dd3c06db30075",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-02-25T10:27:24.321Z",
+            "modified": "2023-02-25T10:59:30.105Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4b19bf31-c5e3-4041-bef3-bc64bf4b08a9",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "2bfcb469-f7bb-4085-8ebc-ade34622758f",
+            "name": "getCategoryById",
+            "url": "{{base_url}}/category/63f9aa63dc7dd3c06db30075",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-02-25T06:29:37.983Z",
+            "modified": "2023-02-25T06:30:27.423Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Toy\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "82fa8e95-353c-4ae9-87c0-4be426b3e337",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "getPostsByTag",
+            "url": "{{base_url}}/posts/tags?tag=health",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-02-26T16:10:42.597Z",
+            "modified": "2023-02-26T16:12:09.229Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "tag",
+                    "value": "health",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "e2f649b4-8a4a-40ab-8e68-790472b292a9",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "2bfcb469-f7bb-4085-8ebc-ade34622758f",
+            "name": "updateCategoryById",
+            "url": "{{base_url}}/category/63f9a9ffbd3cca193be31dd2",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2023-02-25T06:30:45.698Z",
+            "modified": "2023-02-25T06:37:07.651Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Mobile\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1540d7af-2e01-4ad1-b891-8973b309b896",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "getPopularPosts",
+            "url": "{{base_url}}/posts/popular-post",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2023-02-26T16:12:47.997Z",
+            "modified": "2023-02-26T16:21:28.180Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ccb3b467-53e1-42eb-8ecb-229fb1ac4eda",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "2bfcb469-f7bb-4085-8ebc-ade34622758f",
+            "name": "deleteCategoryById",
+            "url": "{{base_url}}/category/63f9aa44bd3cca193be31dd6",
+            "method": "DELETE",
+            "sortNum": 150000,
+            "created": "2023-02-25T06:36:25.705Z",
+            "modified": "2023-02-25T06:42:13.288Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "16b884c9-2ba1-4f42-b3dc-3d823967a5f1",
+            "colId": "702f6241-66f7-49b2-8d3f-1a08a6dc569b",
+            "containerId": "7008a5eb-7bbc-4f73-84da-ed406d454aec",
+            "name": "postSearch",
+            "url": "{{base_url}}/posts/search?query=the&tags=health",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2023-02-26T16:23:55.052Z",
+            "modified": "2023-02-26T16:33:18.575Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "query",
+                    "value": "the",
+                    "isPath": false
+                },
+                {
+                    "name": "tags",
+                    "value": "health",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "headers": [],
+        "auth": {
+            "type": "bearer",
+            "bearer": "{{token}}"
+        },
+        "tests": []
+    }
+}

@@ -4,7 +4,7 @@ const PostController = require("../controllers/PostController");
 const isAuthenticated = require("../middleware/isAuthenticated");
 
 // Create a new post
-router.post("/posts", PostController.createPost);
+router.post("/posts", isAuthenticated, PostController.createPost);
 
 // Get all posts
 router.get("/posts", PostController.getPosts);
@@ -13,10 +13,10 @@ router.get("/posts", PostController.getPosts);
 router.get("/posts/:id", PostController.getPostById);
 
 // Update a specific post by ID
-router.put("/posts/:id", PostController.updatePostById);
+router.put("/posts/:id", isAuthenticated, PostController.updatePostById);
 
 // Delete a specific post by ID
-router.delete("/posts/:id", PostController.deletePostById);
+router.delete("/posts/:id", isAuthenticated, PostController.deletePostById);
 
 // Add comment to a specific post by ID
 router.post(
@@ -30,5 +30,14 @@ router.get("/posts/:postId/related", PostController.getRelatedPosts);
 
 // Get posts by category
 router.get("/posts/category/:categoryId", PostController.getPostByCategory);
+
+// Get post by Tag
+router.get("/posts/tags", PostController.getPostsByTag);
+
+// Get popular post
+router.get("/posts/popular-post", PostController.getPopularPosts);
+
+// Route for searching posts
+router.get("/posts/search", PostController.searchPosts);
 
 module.exports = router;

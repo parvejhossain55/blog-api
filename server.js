@@ -41,16 +41,17 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.log("sfsf",err.stack);
-  res.status(500).send("Internal Server Error");
-});
-
 // routes middleware
 readdirSync("./routes").map((r) =>
   app.use("/api/v1", require(`./routes/${r}`))
 );
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.log(err.stack);
+  res.status(500).send("Internal Server Error");
+  next();
+});
 
 // Start server
 app.listen(port, () => {
